@@ -1,0 +1,32 @@
+{% extends 'miaplicacion/base.html' %}
+{% load static %}
+
+
+{% block titulo %}
+    Productos
+{% endblock titulo %}
+
+{% block cabecera %}
+    Lista de Productos
+{% endblock cabecera %}
+
+{% block contenido %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Precio $</th>
+            <th>Cantidad</th>
+        <tr>
+    {% for Producto in productos %}
+    <tr>
+        <td>{{ Producto.id }}</td>
+        <td>{{ Producto.nombre }}</td>
+        <td>{{ Producto.precio }}</td>
+        <td>{{ Producto.cantidad }}</td>
+     </tr>
+     {% endfor %}
+    </tbody>
+    </table>
+{% endblock contenido %}

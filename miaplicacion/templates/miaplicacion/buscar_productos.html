@@ -1,0 +1,16 @@
+<form method="GET">
+    {{ form.as_p }}
+    <button type="submit">Buscar</button>
+</form>
+
+{% if mensaje %}
+    <p>{{ mensaje }}</p>
+{% else %}
+    {% if resultados %}
+        <ul>
+            {% for producto in resultados %}
+                <li>{{ producto.nombre }} - Precio: {{ producto.precio }} - Cantidad: {{ producto.cantidad }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endif %}

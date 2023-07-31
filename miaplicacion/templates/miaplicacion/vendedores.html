@@ -1,0 +1,36 @@
+{% extends 'miaplicacion/base.html' %}
+{% load static %}
+
+
+{% block titulo %}
+    Vendedores
+{% endblock titulo %}
+
+{% block cabecera %}
+    Lista de Vendedores
+{% endblock cabecera %}
+
+{% block contenido %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Correo</th>
+            <th>telefono</th>
+        <tr>
+    </thead>
+    <tbody>
+    {% for Vendedor in vendedores %}
+    <tr>
+        <td>{{ Vendedor.id }}</td>
+        <td>{{ Vendedor.nombre }}</td>
+        <td>{{ Vendedor.apellido }}</td>
+        <td>{{ Vendedor.correo }}</td>
+        <td>{{ Vendedor.telefono }}</td>
+     </tr>
+    {% endfor %}  
+    </tbody>
+    </table>
+{% endblock contenido %}
